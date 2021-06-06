@@ -8,24 +8,18 @@
       "service": "sap-approuter-userapi"
     },
     {
-      "source": "/beershop-admin/(.*)$",
-      "target": "/beershop-admin/$1",
+      "source": "/registration-admin/(.*)$",
+      "target": "/registration-admin/$1",
       "authenticationType": "xsuaa",
       "destination": "srv_api",
       "csrfProtection": true
     },
     {
-      "source": "/beershop/(.*)$",
-      "target": "/beershop/$1",
+      "source": "/registration/(.*)$",
+      "target": "/registration/$1",
       "authenticationType": "xsuaa",
       "destination": "srv_api",
       "csrfProtection": true
-    },
-    {
-      "source": "/kyma/(.*)$",
-      "target": "/$1",
-      "authenticationType": "xsuaa",
-      "destination": "KYMA"
     },
     {
       "source": "^/(.*)$",
