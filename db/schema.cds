@@ -7,9 +7,9 @@ using {
 
 @assert.unique : {email : [email]}
 entity Registration : cuid, managed {
-  firstname : String;
-  lastname  : String;
-  email     : String;
+  firstname : String @(title : '{i18n>firstname}', );
+  lastname  : String @(title : '{i18n>lastname}', );
+  email     : String @(title : '{i18n>email}', );
 }
 
 // annotations for Data Privacy
