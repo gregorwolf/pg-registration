@@ -21,3 +21,40 @@ Content-Type: application/json
 ###
 GET http://localhost:4004/registration/Registration
 Authorization: Basic alice:
+
+### Get Access Token (HANA) or Cloud Foundry using Password Grant
+# https://blogs.sap.com/2020/03/02/using-postman-for-api-testing-with-xsuaa/
+# @name requestUserAccessToken
+POST {{$dotenv url}}/oauth/token
+Accept: application/json;charset=utf8
+Authorization: Basic {{$dotenv client_id}}:{{$dotenv client_secret}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&username={{$dotenv username}}
+&password={{$dotenv password}}
+&client_id={{$dotenv client_id}}
+&response_type=token
+
+### Fill Variables from Response
+@user_access_token = {{requestUserAccessToken.response.body.$.access_token}}
+
+###
+GET {{$dotenv appurl}}/registration-admin/Registration
+x-approuter-authorization: Bearer {{user_access_token}}
+
+###
+POST {{$dotenv appurl}}/registration/Registration
+x-approuter-authorization: Bearer {{user_access_token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstname" : "Bob",
+  "lastname"  : "Builder",
+  "email"     : "bob.builder@example.com"
+}
+
+###
+GET {{$dotenv appurl}}/registration/Registration
+x-approuter-authorization: Bearer {{user_access_token}}
