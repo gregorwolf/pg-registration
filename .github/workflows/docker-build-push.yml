@@ -54,8 +54,8 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       -
-        name: Build and push
-        id: docker_build
+        name: Build and push UI
+        id: docker_build_ui
         uses: docker/build-push-action@v2.5.0
         with:
           context: app
