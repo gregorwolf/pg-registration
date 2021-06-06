@@ -1,0 +1,23 @@
+###
+GET http://localhost:4004/registration-admin
+Authorization: Basic alice:
+
+###
+GET http://localhost:4004/registration-admin/Registration
+Authorization: Basic alice:
+
+###
+POST http://localhost:4004/registration/Registration
+Authorization: Basic alice:
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstname" : "Alice",
+  "lastname"  : "Wonderland",
+  "email"     : "Alice.Wonderland@example.com"
+}
+
+###
+GET http://localhost:4004/registration/Registration
+Authorization: Basic alice:

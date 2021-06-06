@@ -1,0 +1,19 @@
+###
+GET http://localhost:4004/registration
+Authorization: Basic bob:
+
+###
+GET http://localhost:4004/registration/Registration
+Authorization: Basic bob:
+
+###
+POST http://localhost:4004/registration/Registration
+Authorization: Basic bob:
+Accept: application/json
+Content-Type: application/json
+
+{
+  "firstname" : "Bob",
+  "lastname"  : "Builder",
+  "email"     : "bob.builder@example.com"
+}
