@@ -1,4 +1,4 @@
-using {db} from '../db/schama';
+using {db} from '../db/schema';
 
 @(requires : 'authenticated-user')
 service RegistrationService {
