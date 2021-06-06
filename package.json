@@ -2,7 +2,7 @@
   "name": "pg-registration",
   "version": "1.0.0",
   "description": "CAP Event Registration using PostgreSQL for persistence",
-  "repository": "<Add your repository here>",
+  "repository": "https://github.com/gregorwolf/pg-registration",
   "license": "derived Beer-Ware",
   "private": true,
   "dependencies": {
