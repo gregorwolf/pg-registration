@@ -23,8 +23,13 @@
     "docker:start:cds": "docker run --name pg-registration -p 4004:4004 -t gregorwolf/pg-registration:latest",
     "build": "npx cds-dbm build --production",
     "build:docker": "run-s build build:docker:image",
+    "build:docker:ui": "docker build -t gregorwolf/pg-registration-ui:latest app",
     "build:docker:image": "docker build -t gregorwolf/pg-registration:latest .",
-    "deploy:pg": "npx cds-dbm deploy --load-via delta"
+    "deploy:pg": "npx cds-dbm deploy --load-via delta",
+    "xsuaa:create": "cf create-service xsuaa application pg-registration-uaa -c xs-security.json",
+    "xsuaa:update": "cf update-service pg-registration-uaa -c xs-security.json",
+    "xsuaa:create:key": " cf create-service-key pg-registration-uaa  pg-registration-uaa-key",
+    "xsuaa:download:key": "cf service-key  pg-registration-uaa pg-registration-uaa-key"
   },
   "cds": {
     "requires": {
