@@ -9,4 +9,10 @@ service RegistrationService {
   }])
   entity Registration as projection on db.Registration;
 
+  @readonly
+  entity UserScopes {
+    key username : String;
+        is_admin : Boolean;
+  };
+
 }
