@@ -41,10 +41,12 @@ grant_type=password
 
 ###
 GET {{$dotenv appurl}}/registration-admin/Registration
+Authorization: Bearer {{user_access_token}}
 x-approuter-authorization: Bearer {{user_access_token}}
 
 ###
 POST {{$dotenv appurl}}/registration/Registration
+Authorization: Bearer {{user_access_token}}
 x-approuter-authorization: Bearer {{user_access_token}}
 Accept: application/json
 Content-Type: application/json
@@ -57,4 +59,5 @@ Content-Type: application/json
 
 ###
 GET {{$dotenv appurl}}/registration/Registration
+Authorization: Bearer {{user_access_token}}
 x-approuter-authorization: Bearer {{user_access_token}}
