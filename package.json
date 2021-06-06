@@ -7,7 +7,11 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^5",
-    "express": "^4"
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.2.1",
+    "cds-pg": "^0.1.1",
+    "express": "^4",
+    "passport": "^0.4.1"
   },
   "devDependencies": {
     "cds-dbm": "^0.0.26",
@@ -16,6 +20,47 @@
   "scripts": {
     "start": "cds run",
     "deploy:pg": "npx cds-dbm deploy --load-via delta"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "database"
+      },
+      "database": {
+        "impl": "cds-pg",
+        "model": [
+          "srv"
+        ]
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    },
+    "migrations": {
+      "db": {
+        "schema": {
+          "default": "public",
+          "clone": "_cdsdbm_clone",
+          "reference": "_cdsdbm_ref"
+        },
+        "deploy": {
+          "tmpFile": "tmp/_autodeploy.json",
+          "undeployFile": "db/undeploy.json"
+        }
+      }
+    },
+    "build": {
+      "tasks": [
+        {
+          "use": "node-cf",
+          "src": "srv"
+        },
+        {
+          "use": "postgres-cf",
+          "src": "db"
+        }
+      ]
+    }
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
