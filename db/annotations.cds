@@ -9,12 +9,14 @@ annotate db.Registration with @(UI : {
   SelectionFields     : [
     firstname,
     lastname,
-    email
+    email,
+    registered
   ],
   LineItem            : [
     {Value : firstname},
     {Value : lastname},
     {Value : email},
+    {Value : registered},
   ],
   HeaderInfo          : {
     TypeName       : '{i18n>Registration}',
@@ -30,5 +32,6 @@ annotate db.Registration with @(UI : {
     {Value : firstname},
     {Value : lastname},
     {Value : email},
+    {Value : registered},
   ]}
 });

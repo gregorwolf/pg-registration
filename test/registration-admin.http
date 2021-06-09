@@ -52,9 +52,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "firstname" : "Bob",
-  "lastname"  : "Builder",
-  "email"     : "bob.builder@example.com"
+  "firstname"  : "Bob",
+  "lastname"   : "Builder",
+  "email"      : "bob.builder@example.com",
+  "registered" : true
 }
 
 ###
