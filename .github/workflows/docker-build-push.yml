@@ -54,17 +54,28 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
       -
-        name: Build and push UI
+        name: Build and push Admin UI
         id: docker_build_ui
         uses: docker/build-push-action@v2.5.0
         with:
           context: app
           push: true
-#          platforms: linux/amd64,linux/arm/v7,linux/arm64
-          tags: gregorwolf/pg-registration-ui:latest
+          tags: gregorwolf/pg-registration-admin-ui:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      # -
+      #   name: Build and push registration UI
+      #   id: docker_build_ui
+      #   uses: docker/build-push-action@v2.5.0
+      #   with:
+      #     context: app-registration
+      #     push: true
+      #     tags: gregorwolf/pg-registration-ui:latest
+      # -
+      #   name: Image digest
+      #   run: echo ${{ steps.docker_build.outputs.digest }}
 ## Not possible until https://github.com/docker/roadmap/issues/115 is solved
 #      - 
 #        name: Publish Readme
