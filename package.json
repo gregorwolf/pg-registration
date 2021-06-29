@@ -9,7 +9,7 @@
     "@sap/cds": "^5",
     "@sap/xsenv": "^3.1.0",
     "@sap/xssec": "^3.2.2",
-    "cds-pg": "^0.1.5",
+    "cds-pg": "^0.1.6",
     "express": "^4",
     "passport": "^0.4.1"
   },
