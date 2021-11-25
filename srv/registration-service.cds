@@ -11,8 +11,11 @@ service RegistrationService {
 
   @readonly
   entity UserScopes {
-    key username : String;
-        is_admin : Boolean;
+    key username  : String  @(title : '{i18n>username}');
+        email     : String  @(title : '{i18n>email}');
+        firstname : String  @(title : '{i18n>firstname}');
+        lastname  : String  @(title : '{i18n>lastname}');
+        is_admin  : Boolean @(title : '{i18n>is_admin}');
   };
 
 }

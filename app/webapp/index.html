@@ -26,20 +26,28 @@
         },
         applications: {
           "Registration-manage": {
-            title: "Registration",
-            description: "Manage",
+            title: "Manage Registrations",
+            description: "Needs Admin Auth.",
             additionalInformation: "SAPUI5.Component=Registration.manage",
             applicationType: "URL",
-            url: "Registration-manage",
+            url: "./Registration-manage",
+            navigationMode: "embedded",
+          },
+          "UserScopes-display": {
+            title: "Display User Details",
+            description: "Accessible to everyone",
+            additionalInformation: "SAPUI5.Component=UserScopes.display",
+            applicationType: "URL",
+            url: "./UserScopes-display",
             navigationMode: "embedded",
           },
         },
       };
     </script>
 
-    <script src="https://sapui5.hana.ondemand.com/1.90.0/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+    <script src="https://sapui5.hana.ondemand.com/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
     <script
-      src="https://sapui5.hana.ondemand.com/1.90.0/resources/sap-ui-core.js"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
       data-sap-ui-libs="sap.m, sap.ushell, sap.collaboration, sap.ui.layout"
       data-sap-ui-compatVersion="edge"
       data-sap-ui-theme="sap_fiori_3"

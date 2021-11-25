@@ -3,6 +3,11 @@ GET http://localhost:4004/registration
 Authorization: Basic bob:
 
 ###
+GET http://localhost:4004/registration/UserScopes
+  ?$count=true
+Authorization: Basic bob:
+
+###
 GET http://localhost:4004/registration/Registration
 Authorization: Basic bob:
 
