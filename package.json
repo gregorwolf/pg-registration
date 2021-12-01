@@ -9,7 +9,7 @@
     "@sap-cloud-sdk/core": "^1.52.0",
     "@sap/cds": "^5.6.4",
     "@sap/xsenv": "^3.1.1",
-    "@sap/xssec": "^3.2.10",
+    "@sap/xssec": "^3.2.11",
     "cds-pg": "^0.1.15",
     "express": "^4.17.1",
     "passport": "^0.5.0"
