@@ -11,7 +11,7 @@
   "dependencies": {
     "@sap-cloud-sdk/core": "^1.54.0",
     "@sap/cds": "^5.9.1",
-    "@sap/xsenv": "^3.2.1",
+    "@sap/xsenv": "^3.2.2",
     "@sap/xssec": "^3.2.13",
     "cds-pg": "^0.1.28",
     "express": "^4.17.3",
